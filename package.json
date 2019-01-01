@@ -1,0 +1,26 @@
+{
+    "name": "react-native-material-touch",
+    "version": "0.1.0",
+    "description": "Touchable View with Material-style feedback. Uses TouchableNativeFeedback on Android >21 and an Animated-based implementation otherwise.",
+    "main": "index.js",
+    "author": "George Steel <george.steel@gmail.com>",
+    "license": "MIT",
+    "peerDependencies": {
+        "react": "*",
+        "react-native": "*"
+    },
+    "devDependencies": {
+        "flow-bin": "0.78.0",
+        "babel-eslint": "^10.0.1",
+        "react": "16.6.3",
+        "react-native": "^0.57.8",
+        "eslint": "^5.8.0",
+        "eslint-plugin-babel": "^5.2.1",
+        "eslint-plugin-flowtype": "^3.2.0",
+        "eslint-plugin-import": "^2.12.0",
+        "eslint-plugin-jsx-a11y": "^6.1.0",
+        "eslint-plugin-react": "^7.11.0",
+        "eslint-plugin-react-native": "^3.5.0"
+    }
+
+}
