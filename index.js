@@ -1,4 +1,7 @@
 // @flow
+// Copyright © 2018-2019 Satsuma Labs
+// Written by George Steel <george.steel@gmail.com>
+
 import React, {type Node, Component, type ComponentType} from 'react';
 import {View, TouchableNativeFeedback, TouchableWithoutFeedback, Animated, Platform, Easing} from 'react-native';
 import type {ViewStyleProp} from 'react-native/Libraries/StyleSheet/StyleSheet';
@@ -10,7 +13,7 @@ type TouchTileProps = $ReadOnly<{
     pressColor?: string,
     style?: ViewStyleProp,
 }>;
-export class TouchTileHighlight extends Component<TouchTileProps>{
+export class TouchTileAnimated extends Component<TouchTileProps>{
     anim: Animated.Value;
 
     constructor(props: TouchTileProps) {
@@ -43,7 +46,7 @@ export class TouchTileHighlight extends Component<TouchTileProps>{
 
 const defRipple = TouchableNativeFeedback.Ripple('rgba(0,0,0,0.16)', false);
 
-class TouchTileLolipop extends Component<TouchTileProps>{
+class TouchTileLollipop extends Component<TouchTileProps>{
     render() {
         const style = this.props.color ? [this.props.style, {backgroundColor: this.props.color}] : this.props.style;
         const ripple = this.props.pressColor ? TouchableNativeFeedback.Ripple(this.props.pressColor, false) : defRipple;
@@ -56,7 +59,7 @@ class TouchTileLolipop extends Component<TouchTileProps>{
 
 export const TouchTileIsNative = (Platform.OS === 'android' && Platform.Version >= 21);
 
-const TouchTile = TouchTileIsNative ? TouchTileLolipop : TouchTileHighlight;
+const TouchTile = TouchTileIsNative ? TouchTileLollipop : TouchTileAnimated;
 export default TouchTile;
 
 
@@ -70,11 +73,11 @@ type RoundTouchTileProps = $ReadOnly<{
     innerStyle?: ViewStyleProp,
 }>;
 
-export function RoundTouchTileHighlight({innerStyle, outerStyle, radius, ...props}: RoundTouchTileProps) {
-    return <TouchTileHighlight {...props} style={[outerStyle, innerStyle, {borderRadius: radius}]} />;
+export function RoundTouchTileAnimated({innerStyle, outerStyle, radius, ...props}: RoundTouchTileProps) {
+    return <TouchTileAnimated {...props} style={[outerStyle, innerStyle, {borderRadius: radius}]} />;
 }
 
-export function RoundTouchTileLolipop({onPress,children,color,pressColor,radius,outerStyle,innerStyle}: RoundTouchTileProps) {
+export function RoundTouchTileLollipop({onPress,children,color,pressColor,radius,outerStyle,innerStyle}: RoundTouchTileProps) {
     const style = [{backgroundColor: color, flex: 1, alignSelf: 'stretch', borderRadius: radius}, innerStyle];
     const ripple = TouchableNativeFeedback.Ripple(pressColor, true);
     return <View style={[outerStyle, {borderRadius: radius}]}>
@@ -85,4 +88,4 @@ export function RoundTouchTileLolipop({onPress,children,color,pressColor,radius,
 }
 
 export const RoundTouchTile : ComponentType<RoundTouchTileProps> =
-    TouchTileIsNative ? RoundTouchTileLolipop : RoundTouchTileHighlight;
+    TouchTileIsNative ? RoundTouchTileLollipop : RoundTouchTileAnimated;
