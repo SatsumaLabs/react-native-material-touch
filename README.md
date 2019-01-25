@@ -6,7 +6,7 @@ A simple touchable `View` with Material-style feedback for both Android and IOS.
 Example
 -------
 
-```js
+```jsx
 import TouchTile from 'react-native-material-touch';
 
 ...
