@@ -1,8 +1,9 @@
 {
     "name": "react-native-material-touch",
-    "version": "0.1.0",
+    "version": "1.0.0",
     "description": "Touchable View with Material-style feedback. Uses TouchableNativeFeedback on Android ≥21 and an Animated-based implementation otherwise.",
     "main": "index.js",
+    "files": [],
     "author": "George Steel <george.steel@gmail.com>",
     "license": "MIT",
     "peerDependencies": {
