@@ -4427,9 +4427,10 @@ react-native-maps@expo/react-native-maps#v0.22.1-exp.0:
   version "0.22.1"
   resolved "https://codeload.github.com/expo/react-native-maps/tar.gz/e6f98ff7272e5d0a7fe974a41f28593af2d77bb2"
 
-react-native-material-touch@SatsumaLabs/react-native-material-touch:
-  version "0.1.0"
-  resolved "https://codeload.github.com/SatsumaLabs/react-native-material-touch/tar.gz/df9c0954a1fc1f659f8c44755bbf26aaa0cb4d00"
+react-native-material-touch@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/react-native-material-touch/-/react-native-material-touch-1.0.0.tgz#f555a8a0b4d0cca7b46178f4498e37e310ff7c2c"
+  integrity sha512-8yDcoZJ0aFWghsh6rWmmncMNqz6sfhhwAdXCj/Zb9JzoxbQe7YjarnICnyNUIE7TJ0b2s40MiSSG4hyyv9lzjQ==
 
 react-native-reanimated@1.0.0-alpha.11:
   version "1.0.0-alpha.11"
